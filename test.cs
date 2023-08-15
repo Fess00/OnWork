@@ -17,14 +17,35 @@ internal class test
         Console.WriteLine(tmp);
         tmp = s.Get();
         Console.WriteLine(tmp);
+
+        int[] arr = {6, 2, 76, 22, 1, 88, 90, 45};
+        Console.WriteLine(arr.Length);
+        Working.QSort(arr, 0, arr.Length);
+
         Console.ReadKey();
     }
 }
 
 public static class Working {
     
-    public static void SomeFunc() {
-        
+    public static void QSort(int[] list, int first, int last) {
+        if (first + last < 2)
+            return;
+        int pivot = (first + last) / 2;
+        int b = first;
+        int e = last;
+        while (first < last - 1) {
+            if (list[first] > list[last - 1]) {
+                int tmp = list[first];
+                list[first] = list[last - 1];
+                list[last - 1] = tmp;
+            }
+            Console.WriteLine(list[first] + " " + list[last - 1]);
+            first++;
+            last--;
+        }
+        QSort(list, b, pivot);
+        QSort(list, pivot, e);
     }
 
 }
