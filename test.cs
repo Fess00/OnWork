@@ -1,5 +1,4 @@
 using System;
-using System.Drawing;
 internal class test
 {
     private static void Main(string[] args)
@@ -27,33 +26,16 @@ internal class test
         string str = "0PP";
         LeetCode.IsPalindrome(str);
 
+        int[][] matrix = new int[5][];
+        matrix[0] = new int[5];
+        matrix[1] = new int[5];
+        matrix[2] = new int[5];
+        matrix[3] = new int[5];
+        matrix[4] = new int[5];
+        Console.WriteLine(matrix.Length);
 
         Console.ReadKey();
     }
-}
-
-public static class Working {
-    
-    public static void QSort(int[] list, int first, int last) {
-        if (first + last < 2)
-            return;
-        int pivot = (first + last) / 2;
-        int b = first;
-        int e = last;
-        while (first < last - 1) {
-            if (list[first] > list[last - 1]) {
-                int tmp = list[first];
-                list[first] = list[last - 1];
-                list[last - 1] = tmp;
-            }
-            Console.WriteLine(list[first] + " " + list[last - 1]);
-            first++;
-            last--;
-        }
-        QSort(list, b, pivot);
-        QSort(list, pivot, e);
-    }
-
 }
 
 public class Stack<T> {
@@ -99,6 +81,14 @@ public class Stack<T> {
             this.data[index] = item;
             this.isEmpty[index] = false;
         }
+    }
+
+    public int Size() {
+        return index - 1;
+    }
+
+    public int Capacity() {
+        return this.size;
     }
 }
 
@@ -162,4 +152,16 @@ public static class LeetCode {
         }
         return true;
     }
+
+    public static void Rotate(int[][] matrix) {
+        int size = Math.Floor(matrix.Length / 2);
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = i; j < matrix.Length - i - 1; j++)
+            {
+                
+            }
+        }
+    }
 }
+
