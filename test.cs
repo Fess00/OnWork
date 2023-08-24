@@ -16,23 +16,28 @@ internal class test
         tmp = s.Get();
         Console.WriteLine(tmp);
 
-        // int[] arr = {6, 2, 76, 22, 1, 88, 90, 45};
-        // Console.WriteLine(arr.Length);
-        // Working.QSort(arr, 0, arr.Length);
+        int[] arr = {6, 2, 76, 22, 1, 88, 90, 45};
+        Console.WriteLine("qsort");
+        Algo.QSort(arr);
+        for (int i = 0; i < arr.Length; i++)
+        {
+            Console.Write(arr[i] + " ");
+        }
+        Console.WriteLine();
 
-        int[] arr_1 = {7,1,5,3,6,4};
-        Console.WriteLine(LeetCode.MaxProfit(arr_1));
+        // int[] arr_1 = {7,1,5,3,6,4};
+        // Console.WriteLine(LeetCode.MaxProfit(arr_1));
 
-        string str = "0PP";
-        LeetCode.IsPalindrome(str);
+        // string str = "0PP";
+        // LeetCode.IsPalindrome(str);
 
-        int[][] matrix = new int[5][];
-        matrix[0] = new int[5];
-        matrix[1] = new int[5];
-        matrix[2] = new int[5];
-        matrix[3] = new int[5];
-        matrix[4] = new int[5];
-        Console.WriteLine(matrix.Length);
+        // int[][] matrix = new int[5][];
+        // matrix[0] = new int[5];
+        // matrix[1] = new int[5];
+        // matrix[2] = new int[5];
+        // matrix[3] = new int[5];
+        // matrix[4] = new int[5];
+        // Console.WriteLine(matrix.Length);
 
         Console.ReadKey();
     }
@@ -153,15 +158,31 @@ public static class LeetCode {
         return true;
     }
 
-    public static void Rotate(int[][] matrix) {
-        int size = Math.Floor(matrix.Length / 2);
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = i; j < matrix.Length - i - 1; j++)
-            {
+    // public static void Rotate(int[][] matrix) {
+    //     int size = Math.Floor(matrix.Length / 2);
+    //     for (int i = 0; i < size; i++)
+    //     {
+    //         for (int j = i; j < matrix.Length - i - 1; j++)
+    //         {
                 
-            }
-        }
+    //         }
+    //     }
+    // }
+}
+
+public static class Algo {
+    public static void QSort(int[] arr) {
+        QSort(arr, 0, arr.Length - 1);
+    }
+
+    public static void QSort(int[] arr, int left, int right]) {
+        int tmpLeft = left;
+        int tmpright = right;
+
+        int pivot = arr.Length - 1;
+        int cur = 0;
+
+        for
     }
 }
 
