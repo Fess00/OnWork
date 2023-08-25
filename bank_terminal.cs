@@ -1,15 +1,38 @@
 using System;
+using System.Net;
+using System.Net.Sockets;
 
 internal class TerminalTest
 {
     private static void Main(string[] args)
     {
-        DB db = DB.GetInstance();
+        Terminal terminal = new Terminal();
+        terminal.Connection();
     }
 }
 
 public class Terminal {
-    
+    string ip;
+    int port;
+    Socket socket;
+
+    public Terminal(string ip = "127.0.0.1", int port = 9090) {
+        this.ip = ip;
+        this.port = port;
+    }
+
+    public async void Connection() {
+        socket = new Socket(AddressFamily.InterNetwork,
+         SocketType.Stream, ProtocolType.Tcp);
+        try
+        {
+            await socket.ConnectAsync(ip, port);
+        }
+        catch (SocketException ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+    }
 }
 
 public interface ICard {
